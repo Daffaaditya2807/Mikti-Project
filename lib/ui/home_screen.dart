@@ -24,6 +24,10 @@ class _HomeScreenState extends State<HomeScreen> {
         body: PageView(
           controller: _myPage,
           onPageChanged: (value) {
+            setState(() {
+              pageSelected = value;
+            });
+
             print("this page $value");
           },
           children: screenUi,
@@ -38,7 +42,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return BottomAppBar(
       shape: const CircularNotchedRectangle(),
       color: Colors.grey.shade100,
-      notchMargin: 10,
+      elevation: 0.5,
+      notchMargin: 15,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
