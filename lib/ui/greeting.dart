@@ -6,11 +6,11 @@ class GreetingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _bodyHome(),
+      body: _bodyHome(context),
     );
   }
 
-  Widget _bodyHome() {
+  Widget _bodyHome(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20.0),
       child: Column(
@@ -91,11 +91,39 @@ class GreetingScreen extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          Text(
+          const Text(
             "Menu Informasi",
             style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
           ),
-          Text("Soon Available This Fiture")
+          const Text("Soon Available This Fiture"),
+          ElevatedButton(
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return AlertDialog(
+                      title: const Text("Konfirmasi"),
+                      content: const Text(
+                          "Yakin ingin menolak cinta saya kamu? gak nyesell?"),
+                      actions: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: const Text("Iya"),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: const Text("Tidakkk"),
+                        )
+                      ],
+                    );
+                  },
+                );
+              },
+              child: const Text("Coba Tekan Saya"))
         ],
       ),
     );

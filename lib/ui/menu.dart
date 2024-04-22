@@ -6,8 +6,11 @@ class MenuScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text("Available Soon!"),
+      body: Column(
+        children: [
+          ElevatedButton(onPressed: () {}, child: Text("data")),
+          Badge()
+        ],
       ),
     );
   }
