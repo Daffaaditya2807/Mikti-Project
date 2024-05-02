@@ -1,26 +1,27 @@
-import 'package:build_ui/ui/add_story_screen.dart';
-import 'package:build_ui/ui/greeting.dart';
-import 'package:build_ui/ui/info_detail_screen.dart';
-import 'package:build_ui/ui/menu.dart';
+import 'package:build_ui/ui/home.dart';
+import 'package:build_ui/ui/learn_mikti/add_story_screen.dart';
+import 'package:build_ui/ui/learn_mikti/greeting.dart';
+import 'package:build_ui/ui/learn_mikti/info_detail_screen.dart';
+import 'package:build_ui/ui/learn_mikti/menu.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatefulWidget {
-  HomeScreen({super.key});
+class DashboardScreen extends StatefulWidget {
+  DashboardScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<DashboardScreen> createState() => _DashboardScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _DashboardScreenState extends State<DashboardScreen> {
   int pageSelected = 0;
   final PageController _myPage = PageController();
-  List<Widget> screenUi = [const GreetingScreen(), const MenuScreen()];
+  List<Widget> screenUi = [Home(), const MenuScreen()];
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-        appBar: _appBar(),
+        // appBar: _appBar(),
         body: PageView(
           controller: _myPage,
           onPageChanged: (value) {
@@ -32,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
           },
           children: screenUi,
         ),
-        drawer: _drawer(context),
+        // drawer: _drawer(context),
         floatingActionButton: _floatButton(),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         bottomNavigationBar: _navbar());

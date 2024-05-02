@@ -51,10 +51,6 @@ class GreetingScreen extends StatelessWidget {
                 ),
               ],
             ),
-            const Text(
-              "tidak",
-              style: TextStyle(fontWeight: FontWeight.w700, fontSize: 13),
-            ),
             const SizedBox(
               height: 20,
             ),
