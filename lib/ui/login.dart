@@ -1,6 +1,7 @@
 import 'package:build_ui/component/list_color.dart';
 import 'package:build_ui/ui/dashboard.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -55,15 +56,16 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(
                 height: 40,
               ),
-              const Text(
+              Text(
                 "Selamat Datang",
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style: GoogleFonts.montserrat(
+                    fontSize: 24, fontWeight: FontWeight.bold),
               ),
               SizedBox(
                 width: 280,
                 child: Text(
                   "Harap konfirmasikan username dan password yang telah terdaftar",
-                  style: TextStyle(fontSize: 14, color: lightGrey),
+                  style: GoogleFonts.montserrat(fontSize: 14, color: lightGrey),
                 ),
               ),
               const SizedBox(
@@ -71,7 +73,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               Text(
                 "Username",
-                style: TextStyle(
+                style: GoogleFonts.montserrat(
                   color: _getTextColor(
                       _focusNodeUsername), // Set text color based on focus
                   fontSize: 14,
@@ -90,7 +92,7 @@ class _LoginPageState extends State<LoginPage> {
                 //   fontSize: 14,
                 // ),
                 focusNode: _focusNodeUsername,
-                style: TextStyle(
+                style: GoogleFonts.montserrat(
                   color: _getTextColor(
                       _focusNodeUsername), // Set text color based on focus
                   fontSize: 14,
@@ -110,7 +112,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               Text(
                 "Password",
-                style: TextStyle(
+                style: GoogleFonts.montserrat(
                   color: _getTextColor(
                       _focusNodePassword), // Set text color based on focus
                   fontSize: 14,
@@ -161,9 +163,9 @@ class _LoginPageState extends State<LoginPage> {
                       minimumSize: Size.fromHeight(55),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10))),
-                  child: const Text(
+                  child: Text(
                     "Masuk",
-                    style: TextStyle(
+                    style: GoogleFonts.montserrat(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 16),
@@ -173,26 +175,26 @@ class _LoginPageState extends State<LoginPage> {
                   textAlign: TextAlign.center,
                   text: TextSpan(
                       text: "By entering my phone number , I accept",
-                      style: TextStyle(
+                      style: GoogleFonts.montserrat(
                         color: lightGrey,
                         fontSize: 10,
                       ),
                       children: [
-                        const TextSpan(
+                        TextSpan(
                             text: " Grab's term of service",
-                            style: TextStyle(
+                            style: GoogleFonts.montserrat(
                                 color: Colors.black,
                                 fontSize: 10,
                                 fontWeight: FontWeight.w500)),
                         TextSpan(
                             text: " and",
-                            style: TextStyle(
+                            style: GoogleFonts.montserrat(
                               color: lightGrey,
                               fontSize: 10,
                             )),
-                        const TextSpan(
+                        TextSpan(
                             text: " Grab's term of service",
-                            style: TextStyle(
+                            style: GoogleFonts.montserrat(
                                 color: Colors.black,
                                 fontSize: 10,
                                 fontWeight: FontWeight.w500)),

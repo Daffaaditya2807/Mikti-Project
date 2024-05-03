@@ -1,6 +1,6 @@
+import 'package:build_ui/component/list_color.dart';
 import 'package:build_ui/ui/home.dart';
 import 'package:build_ui/ui/learn_mikti/add_story_screen.dart';
-import 'package:build_ui/ui/learn_mikti/greeting.dart';
 import 'package:build_ui/ui/learn_mikti/info_detail_screen.dart';
 import 'package:build_ui/ui/learn_mikti/menu.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +15,16 @@ class DashboardScreen extends StatefulWidget {
 class _DashboardScreenState extends State<DashboardScreen> {
   int pageSelected = 0;
   final PageController _myPage = PageController();
-  List<Widget> screenUi = [Home(), const MenuScreen()];
+  List<Widget> screenUi = [
+    Home(),
+    const MenuScreen(),
+    Center(
+      child: Text("3"),
+    ),
+    Center(
+      child: Text("4"),
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +51,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   BottomAppBar _navbar() {
     return BottomAppBar(
       shape: const CircularNotchedRectangle(),
-      color: Colors.grey.shade100,
+      color: orange,
       elevation: 0.5,
       notchMargin: 15,
       child: Row(
@@ -53,23 +62,25 @@ class _DashboardScreenState extends State<DashboardScreen> {
               IconButton(
                   onPressed: () {
                     setState(() {
-                      _myPage.animateToPage(0,
-                          duration: Duration(milliseconds: 500),
-                          curve: Curves.easeInOut);
+                      // _myPage.animateToPage(0,
+                      //     duration: Duration(milliseconds: 500),
+                      //     curve: Curves.easeInOut);
+                      _myPage.jumpToPage(0);
                       pageSelected = 0;
                     });
                   },
                   icon: Icon(
                     Icons.home,
-                    color:
-                        pageSelected == 0 ? Colors.pink : Colors.pink.shade100,
+                    color: pageSelected == 0
+                        ? baseYellow
+                        : Color.fromRGBO(255, 251, 218, 1),
                   )),
               AnimatedContainer(
                   duration: Duration(milliseconds: 300),
                   height: 3,
                   width: pageSelected == 0 ? 30 : 0, // Menganimasikan lebar
                   decoration: BoxDecoration(
-                      color: Colors.pink,
+                      color: baseYellow,
                       borderRadius: BorderRadius.circular(10)),
                   curve: Curves.easeOut),
             ],
@@ -79,23 +90,84 @@ class _DashboardScreenState extends State<DashboardScreen> {
               IconButton(
                   onPressed: () {
                     setState(() {
-                      _myPage.animateToPage(1,
-                          duration: Duration(milliseconds: 500),
-                          curve: Curves.easeInOut);
+                      // _myPage.animateToPage(1,
+                      //     duration: Duration(milliseconds: 500),
+                      //     curve: Curves.easeInOut);
+                      _myPage.jumpToPage(1);
                       pageSelected = 1;
                     });
                   },
                   icon: Icon(
-                    Icons.shopify_outlined,
-                    color:
-                        pageSelected == 1 ? Colors.pink : Colors.pink.shade100,
+                    Icons.article,
+                    color: pageSelected == 1
+                        ? baseYellow
+                        : Color.fromRGBO(255, 251, 218, 1),
                   )),
               AnimatedContainer(
                   duration: Duration(milliseconds: 300),
                   height: 3,
                   width: pageSelected == 1 ? 30 : 0, // Menganimasikan lebar
                   decoration: BoxDecoration(
-                      color: Colors.pink,
+                      color: baseYellow,
+                      borderRadius: BorderRadius.circular(10)),
+                  curve: Curves.easeInOut),
+            ],
+          ),
+          Container(
+            width: 80,
+          ),
+          Column(
+            children: [
+              IconButton(
+                  onPressed: () {
+                    setState(() {
+                      // _myPage.animateToPage(2,
+                      //     duration: Duration(milliseconds: 500),
+                      //     curve: Curves.easeInOut);
+                      _myPage.jumpToPage(2);
+                      pageSelected = 2;
+                    });
+                  },
+                  icon: Icon(
+                    Icons.history,
+                    color: pageSelected == 2
+                        ? baseYellow
+                        : Color.fromRGBO(255, 251, 218, 1),
+                  )),
+              AnimatedContainer(
+                  duration: Duration(milliseconds: 300),
+                  height: 3,
+                  width: pageSelected == 2 ? 30 : 0, // Menganimasikan lebar
+                  decoration: BoxDecoration(
+                      color: baseYellow,
+                      borderRadius: BorderRadius.circular(10)),
+                  curve: Curves.easeInOut),
+            ],
+          ),
+          Column(
+            children: [
+              IconButton(
+                  onPressed: () {
+                    setState(() {
+                      // _myPage.animateToPage(3,
+                      //     duration: Duration(milliseconds: 500),
+                      //     curve: Curves.easeInOut);
+                      _myPage.jumpToPage(3);
+                      pageSelected = 3;
+                    });
+                  },
+                  icon: Icon(
+                    Icons.person_2,
+                    color: pageSelected == 3
+                        ? baseYellow
+                        : Color.fromRGBO(255, 251, 218, 1),
+                  )),
+              AnimatedContainer(
+                  duration: Duration(milliseconds: 300),
+                  height: 3,
+                  width: pageSelected == 3 ? 30 : 0, // Menganimasikan lebar
+                  decoration: BoxDecoration(
+                      color: baseYellow,
                       borderRadius: BorderRadius.circular(10)),
                   curve: Curves.easeInOut),
             ],
@@ -108,7 +180,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   FloatingActionButton _floatButton() {
     return FloatingActionButton(
       tooltip: 'Increment',
-      backgroundColor: Colors.pink.shade300,
+      backgroundColor: orange,
       shape: const CircleBorder(),
       onPressed: () {
         const Drawer();
